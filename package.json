@@ -1,0 +1,22 @@
+{
+  "name": "my_name_of_project",
+  "version": "0.0.1",
+  "workspaces": [
+    "./frontend",
+    "./backend"
+  ],
+  "scripts": {
+    "frontend:dev": "cd frontend && bun run dev",
+    "frontend:build": "cd frontend && bun run build",
+    "backend:dev": "cd backend && bun run dev",
+    "backend:build": "cd backend && mkdir -p dist && bun build ./src/main.ts --compile --target=bun-linux-x64 --outfile ./dist/binary",
+    "backend:db": "cd backend && bunx prisma db push"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "dependencies": {
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.15.0"
+  }
+}
